@@ -23,7 +23,7 @@ jobs:
   Run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build & Deploy
         run: make setup && make up
       - name: Test Elasticsearch
