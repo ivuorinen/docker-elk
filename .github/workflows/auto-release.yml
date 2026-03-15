@@ -24,6 +24,7 @@ jobs:
           publish: false
           prerelease: true
           config-name: auto-release.yml
+          commitish: main
           # allows autolabeler to run without unmerged PRs from being added to draft
           disable-releaser: ${{ github.ref_name != 'main' }}
         env:
