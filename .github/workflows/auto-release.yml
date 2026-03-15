@@ -13,6 +13,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
       # Drafts your next Release notes as Pull Requests are merged into "main"
@@ -21,6 +24,7 @@ jobs:
           publish: false
           prerelease: true
           config-name: auto-release.yml
+          commitish: main
           # allows autolabeler to run without unmerged PRs from being added to draft
           disable-releaser: ${{ github.ref_name != 'main' }}
         env:
